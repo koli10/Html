@@ -1,0 +1,37 @@
+
+
+
+
+
+<html>
+<head>
+<title>Tax</title>
+<script language="javascript" >
+	function calc(){
+
+	document.calculate.itemtotal.value=parseInt(document.calculate.qty.value)*parseInt(document.calculate.price.value);
+	document.calculate.subtotal.value=parseInt(document.calculate.itemtotal.value);
+	document.calculate.tax.value= 0.15*parseInt(document.calculate.subtotal.value);
+	document.calculate.total.value= parseInt(document.calculate.tax.value)+ parseInt(document.calculate.subtotal.value);
+
+	}
+	
+</script>
+</head>
+<body>
+<form name="calculate"> 
+<table>
+<tr><td>Qty</td><td>Price</td><td>Item Total</td></tr>
+<tr><td><input type="text" name="qty"></td><td><input type="text" name="price"></td><td><input type="text" value="0.00" name="itemtotal"></td></tr>
+<tr><td></td><td>Subtotal</td><td><input type="text" value="0.00" name="subtotal"></td></tr>
+<tr><td></td><td>Tax<select  >
+					<option >Tax Free</option>
+					<option >15%</option>
+					
+				</select></td><td><input type="text" value="0.00"name="tax"></td></tr>
+<tr><td></td><td>Total</td><td><input type="text" value="0.00" name="total"></td></tr>
+<tr><td></td><td><input type="button" value="Calculate" onclick="calc()"></td></tr>
+</table>
+</form>
+</body>
+</html>
